@@ -3,7 +3,7 @@ class_name PlayerIdle extends PlayerState
 func enter() -> void:
 	player.idle()
 	
-	player.is_jump_available = true
+	player.jump_available = 0
 	
 	if !player.direction and player.is_on_floor():
 		player.sprite.play("idle")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://co2pn00d3aq6n"]
+[gd_scene load_steps=45 format=3 uid="uid://co2pn00d3aq6n"]
 
 [ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/_player/script/player.gd" id="1_c6xgn"]
 [ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
+[ext_resource type="Texture2D" uid="uid://04o6fp4vr47k" path="res://character/froggy/assets/Double Jump (32x32).png" id="2_8io72"]
 [ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://character/froggy/assets/Idle (32x32).png" id="2_onk8j"]
 [ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://character/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
 [ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
@@ -10,6 +11,30 @@
 [ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/_player/script/states/move/move.gd" id="8_c6xgn"]
 [ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/_player/script/states/jump/jump.gd" id="9_c6xgn"]
 [ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/_player/script/states/fall/fall.gd" id="10_tyn13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t8fs"]
+atlas = ExtResource("2_8io72")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87yok"]
+atlas = ExtResource("2_8io72")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4ti6"]
+atlas = ExtResource("2_8io72")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdg4y"]
+atlas = ExtResource("2_8io72")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07mvk"]
+atlas = ExtResource("2_8io72")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxftn"]
+atlas = ExtResource("2_8io72")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20p5a"]
 atlas = ExtResource("2_yaiw4")
@@ -115,9 +140,32 @@ region = Rect2(352, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8t8fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87yok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4ti6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdg4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07mvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxftn")
+}],
+"loop": false,
+"name": &"double_jump",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_20p5a")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -163,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p1y4a")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -219,7 +267,7 @@ JUMP_COYOTE_TIME = 0.12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
-animation = &"move"
+animation = &"fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

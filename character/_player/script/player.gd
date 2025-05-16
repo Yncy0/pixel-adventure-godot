@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var JUMP_BUFFER_TIME := 0.45
 @export var JUMP_COYOTE_TIME := 0.1
+@export var MAX_JUMPS = 2
 
 @onready var sprite = $AnimatedSprite2D
 @onready var buffer_timer: Timer = $BufferTimer
@@ -12,7 +13,7 @@ class_name Player extends CharacterBody2D
 
 var direction: float
 
-var is_jump_available: bool = true
+var jump_available: int = 0
 var jump_buffered: bool = false
 var jump_coyote: bool = false
 
@@ -29,7 +30,7 @@ func move() -> void:
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor() || jump_coyote:
+		if (is_on_floor() || jump_coyote) or (jump_available < MAX_JUMPS):
 			velocity.y = JUMP_VELOCITY
 			if jump_coyote:
 				jump_coyote = false
@@ -51,15 +52,15 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	
 	var was_on_floor = is_on_floor()
+	
+	# print(velocity.y)
 	
 	move_and_slide()
 	
 	if was_on_floor and !is_on_floor() and velocity.y >= 0:
 		jump_coyote = true
 		coyote_timer.start(JUMP_COYOTE_TIME)
-
 
 func _on_buffer_timer_timeout() -> void:
 	jump_buffered = false
