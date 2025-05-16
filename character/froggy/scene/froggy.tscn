@@ -1,13 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://co2pn00d3aq6n"]
+[gd_scene load_steps=37 format=3 uid="uid://co2pn00d3aq6n"]
 
-[ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/froggy/scene/froggy.gd" id="1_onk8j"]
+[ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/froggy/script/froggy.gd" id="1_c6xgn"]
 [ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
 [ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://character/froggy/assets/Idle (32x32).png" id="2_onk8j"]
 [ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://character/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
 [ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
 [ext_resource type="Script" uid="uid://d2ylh53h5m14j" path="res://states/state_machine.gd" id="6_aau3j"]
-[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/froggy/states/idle.gd" id="7_khrki"]
-[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/froggy/states/move.gd" id="8_c6xgn"]
+[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/froggy/states/idle/idle.gd" id="7_khrki"]
+[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/froggy/states/move/move.gd" id="8_c6xgn"]
+[ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/froggy/states/jump/jump.gd" id="9_c6xgn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20p5a"]
 atlas = ExtResource("2_yaiw4")
@@ -211,7 +212,7 @@ animations = [{
 height = 26.0
 
 [node name="Froggy" type="CharacterBody2D"]
-script = ExtResource("1_onk8j")
+script = ExtResource("1_c6xgn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
@@ -229,6 +230,10 @@ metadata/_custom_type_script = "uid://d2ylh53h5m14j"
 [node name="PlayerIdle" type="Node" parent="StateMachine"]
 script = ExtResource("7_khrki")
 metadata/_custom_type_script = "uid://cp0e5rbfc4u2c"
+
+[node name="PlayerJump" type="Node" parent="StateMachine"]
+script = ExtResource("9_c6xgn")
+metadata/_custom_type_script = "uid://b586jjb6d2v7o"
 
 [node name="PlayerMove" type="Node" parent="StateMachine"]
 script = ExtResource("8_c6xgn")

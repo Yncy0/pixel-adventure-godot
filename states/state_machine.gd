@@ -15,6 +15,9 @@ func _ready() -> void:
 	await owner.ready
 	current_state.enter()
 
+func _unhandled_input(event: InputEvent) -> void:
+	current_state.update_input(event)
+
 func _process(delta: float) -> void:
 	current_state.update_process(delta)
 
@@ -29,6 +32,8 @@ func next_state(new_state_name: StringName) -> void:
 			current_state.exit()
 			new_state.enter()
 			current_state = new_state
+			
+			print(current_state)
 		else:
 			printerr("Nodes doesn't match the next state %s" % new_state)
 	else:

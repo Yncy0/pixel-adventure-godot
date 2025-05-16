@@ -8,6 +8,9 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
+func update_input(_event: InputEvent) -> void:
+	pass
+
 func update_process(_delta: float) -> void:
 	pass
 

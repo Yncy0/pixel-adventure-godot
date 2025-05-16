@@ -15,13 +15,13 @@ func idle() -> void:
 func move() -> void:
 	direction = Input.get_axis("left", "right")
 	
-	if direction:
-		velocity.x = direction * SPEED
+	velocity.x = direction * SPEED
 	
 	player_flip()
 
 func jump():
-	velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 # Actions when character flip
 func player_flip() -> void:
