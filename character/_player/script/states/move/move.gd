@@ -1,8 +1,6 @@
 class_name PlayerMove extends PlayerState
 
 func enter() -> void:
-	print("Move")
-	
 	player.sprite.play("move")
 
 func update_input(event: InputEvent) -> void:
@@ -20,5 +18,4 @@ func update_process(_delta: float) -> void:
 		change_state.emit("PlayerJump")
 	
 	if player.is_on_floor() and player.jump_buffered:
-		print("IAM BUFFERING")
 		player.jump()

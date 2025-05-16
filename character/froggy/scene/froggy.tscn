@@ -214,7 +214,8 @@ height = 26.0
 
 [node name="Froggy" type="CharacterBody2D"]
 script = ExtResource("1_c6xgn")
-JUMP_BUFFER_TIME = 0.3
+JUMP_BUFFER_TIME = 0.1
+JUMP_COYOTE_TIME = 0.12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
@@ -250,4 +251,7 @@ metadata/_custom_type_script = "uid://dos5r1j8a7vnw"
 
 [node name="BufferTimer" type="Timer" parent="."]
 
+[node name="CoyoteTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="BufferTimer" to="." method="_on_buffer_timer_timeout"]
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

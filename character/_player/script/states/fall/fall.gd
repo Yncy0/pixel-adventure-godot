@@ -1,7 +1,6 @@
 class_name PlayerFall extends PlayerState
 
 func enter() -> void:
-	print("Fall")
 	player.sprite.play("fall")
 
 

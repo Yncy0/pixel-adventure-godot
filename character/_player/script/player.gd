@@ -4,14 +4,17 @@ class_name Player extends CharacterBody2D
 @export var SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
 @export var JUMP_BUFFER_TIME := 0.45
+@export var JUMP_COYOTE_TIME := 0.1
 
 @onready var sprite = $AnimatedSprite2D
 @onready var buffer_timer: Timer = $BufferTimer
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 var direction: float
 
 var is_jump_available: bool = true
 var jump_buffered: bool = false
+var jump_coyote: bool = false
 
 # Basic Locomotion
 func idle() -> void:
@@ -26,8 +29,11 @@ func move() -> void:
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() || jump_coyote:
 			velocity.y = JUMP_VELOCITY
+			if jump_coyote:
+				jump_coyote = false
+				coyote_timer.stop()
 		else:
 			if !jump_buffered:
 				jump_buffered = true
@@ -44,10 +50,20 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		
 	
+	var was_on_floor = is_on_floor()
 	
 	move_and_slide()
+	
+	if was_on_floor and !is_on_floor() and velocity.y >= 0:
+		jump_coyote = true
+		coyote_timer.start(JUMP_COYOTE_TIME)
 
 
 func _on_buffer_timer_timeout() -> void:
 	jump_buffered = false
+
+
+func _on_coyote_timer_timeout() -> void:
+	jump_coyote = false
