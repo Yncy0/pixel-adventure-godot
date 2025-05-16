@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var JUMP_BUFFER_TIME := 0.45
 @export var JUMP_COYOTE_TIME := 0.1
+@export var WALL_FRICTION := 70.0
 @export var MAX_JUMPS = 2
 
 @onready var sprite = $AnimatedSprite2D
@@ -51,10 +52,12 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	var was_on_floor = is_on_floor()
 	
-	# print(velocity.y)
+	if is_on_wall() and !is_on_floor():
+		velocity.y += WALL_FRICTION * delta
+		velocity.y = min(velocity.y, WALL_FRICTION)
+	
+	var was_on_floor = is_on_floor()
 	
 	move_and_slide()
 	

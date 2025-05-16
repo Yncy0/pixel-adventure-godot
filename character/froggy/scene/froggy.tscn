@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://co2pn00d3aq6n"]
+[gd_scene load_steps=52 format=3 uid="uid://co2pn00d3aq6n"]
 
 [ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/_player/script/player.gd" id="1_c6xgn"]
 [ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
 [ext_resource type="Script" uid="uid://d2ylh53h5m14j" path="res://states/state_machine.gd" id="6_aau3j"]
 [ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/_player/script/states/idle/idle.gd" id="7_khrki"]
+[ext_resource type="Texture2D" uid="uid://wqylcdxn5gtk" path="res://character/froggy/assets/Wall Jump (32x32).png" id="7_ydpga"]
 [ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/_player/script/states/move/move.gd" id="8_c6xgn"]
 [ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/_player/script/states/jump/jump.gd" id="9_c6xgn"]
 [ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/_player/script/states/fall/fall.gd" id="10_tyn13"]
+[ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://character/_player/script/states/jump/wall_jump.gd" id="13_pah6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t8fs"]
 atlas = ExtResource("2_8io72")
@@ -136,6 +138,26 @@ region = Rect2(320, 0, 32, 32)
 atlas = ExtResource("4_78bfd")
 region = Rect2(352, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwmsk"]
+atlas = ExtResource("7_ydpga")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hots"]
+atlas = ExtResource("7_ydpga")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrjyu"]
+atlas = ExtResource("7_ydpga")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4vm1"]
+atlas = ExtResource("7_ydpga")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oa7x"]
+atlas = ExtResource("7_ydpga")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1y4a"]
 animations = [{
 "frames": [{
@@ -255,6 +277,26 @@ animations = [{
 "loop": true,
 "name": &"move",
 "speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwmsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hots")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrjyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4vm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oa7x")
+}],
+"loop": true,
+"name": &"wall",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6l2t"]
@@ -264,10 +306,11 @@ height = 26.0
 script = ExtResource("1_c6xgn")
 JUMP_BUFFER_TIME = 0.1
 JUMP_COYOTE_TIME = 0.12
+WALL_FRICTION = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
-animation = &"fall"
+animation = &"wall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
@@ -296,6 +339,10 @@ metadata/_custom_type_script = "uid://rnvaiksy3o6a"
 [node name="PlayerFall" type="Node" parent="StateMachine"]
 script = ExtResource("10_tyn13")
 metadata/_custom_type_script = "uid://dos5r1j8a7vnw"
+
+[node name="PlayerWallJump" type="Node" parent="StateMachine"]
+script = ExtResource("13_pah6a")
+metadata/_custom_type_script = "uid://bgd6c22r8v0uh"
 
 [node name="BufferTimer" type="Timer" parent="."]
 
