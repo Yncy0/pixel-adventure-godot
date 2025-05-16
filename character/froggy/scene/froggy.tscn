@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://co2pn00d3aq6n"]
+[gd_scene load_steps=38 format=3 uid="uid://co2pn00d3aq6n"]
 
 [ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/froggy/script/froggy.gd" id="1_c6xgn"]
 [ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
@@ -6,9 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://character/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
 [ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
 [ext_resource type="Script" uid="uid://d2ylh53h5m14j" path="res://states/state_machine.gd" id="6_aau3j"]
-[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/froggy/states/idle/idle.gd" id="7_khrki"]
-[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/froggy/states/move/move.gd" id="8_c6xgn"]
-[ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/froggy/states/jump/jump.gd" id="9_c6xgn"]
+[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/froggy/script/states/idle/idle.gd" id="7_khrki"]
+[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/froggy/script/states/move/move.gd" id="8_c6xgn"]
+[ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/froggy/script/states/jump/jump.gd" id="9_c6xgn"]
+[ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/froggy/script/states/fall/fall.gd" id="10_tyn13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20p5a"]
 atlas = ExtResource("2_yaiw4")
@@ -222,6 +223,9 @@ animation = &"move"
 position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_q6l2t")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
 script = ExtResource("6_aau3j")
 current_state = NodePath("PlayerIdle")
@@ -238,3 +242,7 @@ metadata/_custom_type_script = "uid://b586jjb6d2v7o"
 [node name="PlayerMove" type="Node" parent="StateMachine"]
 script = ExtResource("8_c6xgn")
 metadata/_custom_type_script = "uid://rnvaiksy3o6a"
+
+[node name="PlayerFall" type="Node" parent="StateMachine"]
+script = ExtResource("10_tyn13")
+metadata/_custom_type_script = "uid://dos5r1j8a7vnw"

@@ -7,5 +7,5 @@ func enter() -> void:
 func update_process(_delta: float) -> void:
 	player.move()
 	
-	if player.is_on_floor():
-		change_state.emit("PlayerIdle")
+	if player.velocity.y > 0:
+		change_state.emit("PlayerFall")
