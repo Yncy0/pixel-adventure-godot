@@ -1,7 +1,10 @@
 class_name PlayerIdle extends PlayerState
 
 func enter() -> void:
+	print("Idle")
 	player.idle()
+	
+	player.is_jump_available = true
 	
 	if !player.direction and player.is_on_floor():
 		player.sprite.play("idle")
@@ -15,3 +18,7 @@ func update_process(_delta: float) -> void:
 	
 	if !player.is_on_floor():
 		change_state.emit("PlayerJump")
+	
+	if player.is_on_floor() and player.jump_buffered:
+		print("IAM BUFFERING")
+		player.jump()

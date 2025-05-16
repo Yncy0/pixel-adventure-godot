@@ -1,9 +1,12 @@
 class_name PlayerFall extends PlayerState
 
 func enter() -> void:
+	print("Fall")
 	player.sprite.play("fall")
 
+
 func update_process(_delta: float) -> void:
+	player.jump()
 	player.move()
 	
 	if player.is_on_floor():

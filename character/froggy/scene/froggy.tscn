@@ -214,6 +214,7 @@ height = 26.0
 
 [node name="Froggy" type="CharacterBody2D"]
 script = ExtResource("1_c6xgn")
+JUMP_BUFFER_TIME = 0.3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
@@ -246,3 +247,7 @@ metadata/_custom_type_script = "uid://rnvaiksy3o6a"
 [node name="PlayerFall" type="Node" parent="StateMachine"]
 script = ExtResource("10_tyn13")
 metadata/_custom_type_script = "uid://dos5r1j8a7vnw"
+
+[node name="BufferTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="BufferTimer" to="." method="_on_buffer_timer_timeout"]
