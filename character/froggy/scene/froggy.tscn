@@ -1,10 +1,10 @@
 [gd_scene load_steps=33 format=3 uid="uid://co2pn00d3aq6n"]
 
 [ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/froggy/scene/froggy.gd" id="1_onk8j"]
-[ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://assets/Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_s2jb6"]
-[ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://assets/Free/Main Characters/Ninja Frog/Idle (32x32).png" id="2_onk8j"]
-[ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://assets/Free/Main Characters/Ninja Frog/Fall (32x32).png" id="2_yaiw4"]
-[ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://assets/Free/Main Characters/Ninja Frog/Run (32x32).png" id="4_78bfd"]
+[ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
+[ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://character/froggy/assets/Idle (32x32).png" id="2_onk8j"]
+[ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://character/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
+[ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20p5a"]
 atlas = ExtResource("2_yaiw4")
@@ -205,16 +205,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6l2t"]
+height = 26.0
 
 [node name="Froggy" type="CharacterBody2D"]
 script = ExtResource("1_onk8j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
-animation = &"fall"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_q6l2t")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
