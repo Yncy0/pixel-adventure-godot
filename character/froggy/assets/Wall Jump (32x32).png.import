@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6hrew56sl24v"
-path="res://.godot/imported/Fall (32x32).png-2dd0bad097495d46a6ccd3bd2f971190.ctex"
+uid="uid://wqylcdxn5gtk"
+path="res://.godot/imported/Wall Jump (32x32).png-bbfe487376f1cd4182a345fcc18f0568.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Main Characters/Ninja Frog/Fall (32x32).png"
-dest_files=["res://.godot/imported/Fall (32x32).png-2dd0bad097495d46a6ccd3bd2f971190.ctex"]
+source_file="res://character/froggy/assets/Wall Jump (32x32).png"
+dest_files=["res://.godot/imported/Wall Jump (32x32).png-bbfe487376f1cd4182a345fcc18f0568.ctex"]
 
 [params]
 
