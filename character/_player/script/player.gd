@@ -31,7 +31,7 @@ func move() -> void:
 
 func jump():
 	if Input.is_action_just_pressed("jump"):
-		if (is_on_floor() || jump_coyote) or (jump_available < MAX_JUMPS):
+		if (is_on_floor() || jump_coyote) or (jump_available < MAX_JUMPS) or (is_on_wall()):
 			velocity.y = JUMP_VELOCITY
 			if jump_coyote:
 				jump_coyote = false
@@ -40,6 +40,11 @@ func jump():
 			if !jump_buffered:
 				jump_buffered = true
 				buffer_timer.start()
+
+func wall_slide(delta: float) -> void:
+	if is_on_wall() and !is_on_floor():
+		velocity.y += WALL_FRICTION * delta
+		velocity.y = min(velocity.y, WALL_FRICTION)
 
 # Actions when character flip
 func player_flip() -> void:
@@ -52,10 +57,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	if is_on_wall() and !is_on_floor():
-		velocity.y += WALL_FRICTION * delta
-		velocity.y = min(velocity.y, WALL_FRICTION)
 	
 	var was_on_floor = is_on_floor()
 	

@@ -16,5 +16,5 @@ func update_process(_delta: float) -> void:
 		if player.jump_available <= player.MAX_JUMPS:
 			change_state.emit("PlayerFall")
 	
-	if player.is_on_wall() and Input.is_action_just_pressed("jump"):
-			change_state.emit("PlayerWallJump")
+	if player.is_on_wall():
+			change_state.emit("PlayerWallSlide")

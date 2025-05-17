@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/_player/script/states/move/move.gd" id="8_c6xgn"]
 [ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/_player/script/states/jump/jump.gd" id="9_c6xgn"]
 [ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/_player/script/states/fall/fall.gd" id="10_tyn13"]
-[ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://character/_player/script/states/jump/wall_jump.gd" id="13_pah6a"]
+[ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://character/_player/script/states/wall/wall_slide.gd" id="13_pah6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t8fs"]
 atlas = ExtResource("2_8io72")
@@ -340,7 +340,7 @@ metadata/_custom_type_script = "uid://rnvaiksy3o6a"
 script = ExtResource("10_tyn13")
 metadata/_custom_type_script = "uid://dos5r1j8a7vnw"
 
-[node name="PlayerWallJump" type="Node" parent="StateMachine"]
+[node name="PlayerWallSlide" type="Node" parent="StateMachine"]
 script = ExtResource("13_pah6a")
 metadata/_custom_type_script = "uid://bgd6c22r8v0uh"
 
