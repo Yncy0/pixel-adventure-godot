@@ -12,6 +12,8 @@ class_name Player extends CharacterBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
+@onready var ray_cast_wall_l: RayCast2D = $RayCastWallL
+@onready var ray_cast_wall_r: RayCast2D = $RayCastWallR
 
 var direction: float
 
@@ -36,12 +38,6 @@ func jump():
 	if Input.is_action_just_pressed("jump"):
 		if (is_on_floor() || jump_coyote) or (jump_available < MAX_JUMPS):
 			velocity.y = JUMP_VELOCITY
-		if is_on_wall() and Input.is_action_pressed("right"):
-			velocity.y = JUMP_VELOCITY
-			velocity.x = -WALL_JUMP_FORCE
-		if is_on_wall() and Input.is_action_pressed("left"):
-			velocity.y = JUMP_VELOCITY
-			velocity.x = WALL_JUMP_FORCE
 			if jump_coyote:
 				jump_coyote = false
 				coyote_timer.stop()
@@ -51,16 +47,17 @@ func jump():
 				buffer_timer.start()
 
 func wall_jump():
-	if Input.is_action_just_pressed("jump"):
-		if is_on_wall() and Input.is_action_pressed("right"):
-			velocity.y = JUMP_VELOCITY
-			velocity.x = -WALL_JUMP_FORCE
-		if is_on_wall() and Input.is_action_pressed("left"):
-			velocity.y = JUMP_VELOCITY
-			velocity.x = WALL_JUMP_FORCE
+	if is_on_wall_only():
+		if Input.is_action_just_pressed("jump"):
+			if ray_cast_wall_l.is_colliding():
+				velocity = Vector2(WALL_JUMP_FORCE, JUMP_VELOCITY)
+				sprite.flip_h = false
+			if ray_cast_wall_r.is_colliding():
+				velocity = Vector2(-WALL_JUMP_FORCE, JUMP_VELOCITY)
+				sprite.flip_h = true
 
 func wall_slide(delta: float) -> void:
-	if is_on_wall() and !is_on_floor():
+	if is_on_wall_only():
 		if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 			wall_sliding = true
 		else:

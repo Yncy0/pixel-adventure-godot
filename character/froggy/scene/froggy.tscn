@@ -308,7 +308,6 @@ script = ExtResource("1_c6xgn")
 JUMP_BUFFER_TIME = 0.1
 JUMP_COYOTE_TIME = 0.12
 WALL_FRICTION = 100.0
-WALL_JUMP_FORCE = 115.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
@@ -353,6 +352,12 @@ metadata/_custom_type_script = "uid://y3inhprtivlv"
 [node name="BufferTimer" type="Timer" parent="."]
 
 [node name="CoyoteTimer" type="Timer" parent="."]
+
+[node name="RayCastWallL" type="RayCast2D" parent="."]
+target_position = Vector2(-17, 0)
+
+[node name="RayCastWallR" type="RayCast2D" parent="."]
+target_position = Vector2(17, 0)
 
 [connection signal="timeout" from="BufferTimer" to="." method="_on_buffer_timer_timeout"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
