@@ -3,6 +3,8 @@ class_name PlayerWallJump extends PlayerState
 func enter() -> void:
 	player.wall_jump()
 	player.sprite.play("double_jump")
+	
+	player.jump_available = 1
 
 func update_process(_delta: float) -> void:
 	player.wall_jump()
