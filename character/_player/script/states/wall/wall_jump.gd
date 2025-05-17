@@ -2,7 +2,7 @@ class_name PlayerWallJump extends PlayerState
 
 func enter() -> void:
 	player.wall_jump()
-	player.sprite.play("double_jump")
+	player.sprite.play("jump")
 	
 	player.jump_available = 1
 

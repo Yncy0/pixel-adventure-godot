@@ -51,8 +51,10 @@ func wall_jump():
 		if Input.is_action_just_pressed("jump"):
 			if ray_cast_wall_l.is_colliding():
 				velocity = Vector2(WALL_JUMP_FORCE, JUMP_VELOCITY)
+				sprite.flip_h = false
 			if ray_cast_wall_r.is_colliding():
 				velocity = Vector2(-WALL_JUMP_FORCE, JUMP_VELOCITY)
+				sprite.flip_h = true
 
 func wall_slide(delta: float) -> void:
 	if is_on_wall_only():
