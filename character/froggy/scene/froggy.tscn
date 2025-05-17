@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://co2pn00d3aq6n"]
+[gd_scene load_steps=53 format=3 uid="uid://co2pn00d3aq6n"]
 
 [ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/_player/script/player.gd" id="1_c6xgn"]
 [ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/_player/script/states/jump/jump.gd" id="9_c6xgn"]
 [ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/_player/script/states/fall/fall.gd" id="10_tyn13"]
 [ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://character/_player/script/states/wall/wall_slide.gd" id="13_pah6a"]
+[ext_resource type="Script" uid="uid://y3inhprtivlv" path="res://character/_player/script/states/wall/wall_jump.gd" id="14_p1y4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t8fs"]
 atlas = ExtResource("2_8io72")
@@ -307,6 +308,7 @@ script = ExtResource("1_c6xgn")
 JUMP_BUFFER_TIME = 0.1
 JUMP_COYOTE_TIME = 0.12
 WALL_FRICTION = 100.0
+WALL_JUMP_FORCE = 115.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
@@ -343,6 +345,10 @@ metadata/_custom_type_script = "uid://dos5r1j8a7vnw"
 [node name="PlayerWallSlide" type="Node" parent="StateMachine"]
 script = ExtResource("13_pah6a")
 metadata/_custom_type_script = "uid://bgd6c22r8v0uh"
+
+[node name="PlayerWallJump" type="Node" parent="StateMachine"]
+script = ExtResource("14_p1y4a")
+metadata/_custom_type_script = "uid://y3inhprtivlv"
 
 [node name="BufferTimer" type="Timer" parent="."]
 
