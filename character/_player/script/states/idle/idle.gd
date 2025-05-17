@@ -19,4 +19,5 @@ func update_process(_delta: float) -> void:
 		change_state.emit("PlayerJump")
 	
 	if player.is_on_floor() and player.jump_buffered:
+		print("I AM BUFFERING")
 		player.jump()

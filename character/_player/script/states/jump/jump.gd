@@ -12,5 +12,9 @@ func enter() -> void:
 func update_process(_delta: float) -> void:
 	player.move()
 	
-	if player.velocity.y > 0 and player.jump_available <= player.MAX_JUMPS:
-		change_state.emit("PlayerFall")
+	if player.velocity.y > 0:
+		if player.jump_available <= player.MAX_JUMPS:
+			change_state.emit("PlayerFall")
+	
+	if player.is_on_wall():
+			change_state.emit("PlayerWallSlide")

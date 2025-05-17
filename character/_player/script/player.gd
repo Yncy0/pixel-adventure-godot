@@ -5,6 +5,8 @@ class_name Player extends CharacterBody2D
 @export var JUMP_VELOCITY := -400.0
 @export var JUMP_BUFFER_TIME := 0.45
 @export var JUMP_COYOTE_TIME := 0.1
+@export var WALL_FRICTION := 70.0
+@export var WALL_JUMP_FORCE := 100.0
 @export var MAX_JUMPS = 2
 
 @onready var sprite = $AnimatedSprite2D
@@ -16,6 +18,8 @@ var direction: float
 var jump_available: int = 0
 var jump_buffered: bool = false
 var jump_coyote: bool = false
+
+var wall_sliding: bool = false
 
 # Basic Locomotion
 func idle() -> void:
@@ -32,6 +36,12 @@ func jump():
 	if Input.is_action_just_pressed("jump"):
 		if (is_on_floor() || jump_coyote) or (jump_available < MAX_JUMPS):
 			velocity.y = JUMP_VELOCITY
+		if is_on_wall() and Input.is_action_pressed("right"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -WALL_JUMP_FORCE
+		if is_on_wall() and Input.is_action_pressed("left"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = WALL_JUMP_FORCE
 			if jump_coyote:
 				jump_coyote = false
 				coyote_timer.stop()
@@ -39,6 +49,28 @@ func jump():
 			if !jump_buffered:
 				jump_buffered = true
 				buffer_timer.start()
+
+func wall_jump():
+	if Input.is_action_just_pressed("jump"):
+		if is_on_wall() and Input.is_action_pressed("right"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -WALL_JUMP_FORCE
+		if is_on_wall() and Input.is_action_pressed("left"):
+			velocity.y = JUMP_VELOCITY
+			velocity.x = WALL_JUMP_FORCE
+
+func wall_slide(delta: float) -> void:
+	if is_on_wall() and !is_on_floor():
+		if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
+			wall_sliding = true
+		else:
+			wall_sliding = false
+	else:
+		wall_sliding = false
+	
+	if wall_sliding:
+		velocity.y += WALL_FRICTION * delta
+		velocity.y = min(velocity.y, WALL_FRICTION)
 
 # Actions when character flip
 func player_flip() -> void:
@@ -51,14 +83,13 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	var was_on_floor = is_on_floor()
 	
-	# print(velocity.y)
+	var was_on_floor = is_on_floor()
+	var was_on_wall = is_on_wall()
 	
 	move_and_slide()
 	
-	if was_on_floor and !is_on_floor() and velocity.y >= 0:
+	if was_on_floor and !is_on_floor() and velocity.y >= 0 or was_on_wall:
 		jump_coyote = true
 		coyote_timer.start(JUMP_COYOTE_TIME)
 
