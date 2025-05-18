@@ -1,7 +1,15 @@
 class_name Chicken extends EnemyBase
 
 
+@onready var ray: RayCast2D = $RayCastPlayerDetect
+
+
 func _physics_process(_delta: float) -> void:
+	if ray.is_colliding():
+		var collider = ray.get_collider()
+		if collider is Player:
+			is_player = true
+	
 	if !is_player:
 		velocity.x = move_toward(velocity.x, 0.0, Speed)
 	elif is_player:
@@ -9,8 +17,10 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = dir.x * Speed
 	
 	if velocity.x > 0:
+		ray.rotation_degrees = 0
 		sprite.flip_h = true
 	elif velocity.x < 0:
+		ray.rotation_degrees = 180
 		sprite.flip_h = false
 	
 	if velocity.x == 0:

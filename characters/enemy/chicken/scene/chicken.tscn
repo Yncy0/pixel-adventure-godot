@@ -234,6 +234,11 @@ position = Vector2(0, -41.5)
 shape = SubResource("RectangleShape2D_asjed")
 debug_color = Color(0.616482, 0.368094, 0.978802, 0.42)
 
+[node name="RayCastPlayerDetect" type="RayCast2D" parent="." index="3"]
+rotation = 3.14159
+target_position = Vector2(500, 0)
+collision_mask = 2
+
 [connection signal="body_entered" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_entered"]
 [connection signal="body_exited" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_exited"]
 
