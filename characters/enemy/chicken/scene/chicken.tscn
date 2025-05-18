@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://eowrfmiqb722"]
+[gd_scene load_steps=21 format=3 uid="uid://eowrfmiqb722"]
 
 [ext_resource type="PackedScene" uid="uid://ddua662d8g17f" path="res://characters/enemy/_index/scene/enemy_base.tscn" id="1_k774q"]
 [ext_resource type="Script" uid="uid://d35n6sd3ruxv2" path="res://characters/enemy/chicken/script/chicken.gd" id="2_bomo7"]
 [ext_resource type="Texture2D" uid="uid://c0u1mjlme2akm" path="res://characters/enemy/chicken/assets/Idle (32x34).png" id="3_e2o8b"]
+[ext_resource type="PackedScene" uid="uid://dlrlnpqkfk446" path="res://characters/enemy/_index/scene/area_player_detect.tscn" id="4_asjed"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asjed"]
 atlas = ExtResource("3_e2o8b")
@@ -103,12 +104,11 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e2o8b"]
-radius = 12.0
-height = 32.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gye3g"]
+height = 34.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o8b"]
-size = Vector2(386, 152)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_asjed"]
+size = Vector2(200, 117)
 
 [node name="Chicken" instance=ExtResource("1_k774q")]
 script = ExtResource("2_bomo7")
@@ -120,11 +120,16 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1"]
-shape = SubResource("CapsuleShape2D_e2o8b")
+shape = SubResource("CapsuleShape2D_gye3g")
+
+[node name="AreaPlayerDetect" parent="." index="2" instance=ExtResource("4_asjed")]
 
 [node name="CollisionShape2D" parent="AreaPlayerDetect" index="0"]
-shape = SubResource("RectangleShape2D_e2o8b")
-debug_color = Color(0.680498, 0.3551, 0.899846, 0.42)
+position = Vector2(0, -41.5)
+shape = SubResource("RectangleShape2D_asjed")
+debug_color = Color(0.616482, 0.368094, 0.978802, 0.42)
 
 [connection signal="body_entered" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_entered"]
 [connection signal="body_exited" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_exited"]
+
+[editable path="AreaPlayerDetect"]
