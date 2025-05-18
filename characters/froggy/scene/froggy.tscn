@@ -1,19 +1,19 @@
 [gd_scene load_steps=53 format=3 uid="uid://co2pn00d3aq6n"]
 
-[ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://character/_player/script/player.gd" id="1_c6xgn"]
-[ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://character/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
-[ext_resource type="Texture2D" uid="uid://04o6fp4vr47k" path="res://character/froggy/assets/Double Jump (32x32).png" id="2_8io72"]
-[ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://character/froggy/assets/Idle (32x32).png" id="2_onk8j"]
-[ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://character/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
-[ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://character/froggy/assets/Run (32x32).png" id="4_78bfd"]
+[ext_resource type="Script" uid="uid://0d4qas52ty3p" path="res://characters/_player/script/player.gd" id="1_c6xgn"]
+[ext_resource type="Texture2D" uid="uid://bud8qwhjye3nu" path="res://characters/froggy/assets/Jump (32x32).png" id="1_s2jb6"]
+[ext_resource type="Texture2D" uid="uid://04o6fp4vr47k" path="res://characters/froggy/assets/Double Jump (32x32).png" id="2_8io72"]
+[ext_resource type="Texture2D" uid="uid://bqgiwglo7flq2" path="res://characters/froggy/assets/Idle (32x32).png" id="2_onk8j"]
+[ext_resource type="Texture2D" uid="uid://6hrew56sl24v" path="res://characters/froggy/assets/Fall (32x32).png" id="2_yaiw4"]
+[ext_resource type="Texture2D" uid="uid://cmx3egbygeh0f" path="res://characters/froggy/assets/Run (32x32).png" id="4_78bfd"]
 [ext_resource type="Script" uid="uid://d2ylh53h5m14j" path="res://states/state_machine.gd" id="6_aau3j"]
-[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://character/_player/script/states/idle/idle.gd" id="7_khrki"]
-[ext_resource type="Texture2D" uid="uid://wqylcdxn5gtk" path="res://character/froggy/assets/Wall Jump (32x32).png" id="7_ydpga"]
-[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://character/_player/script/states/move/move.gd" id="8_c6xgn"]
-[ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://character/_player/script/states/jump/jump.gd" id="9_c6xgn"]
-[ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://character/_player/script/states/fall/fall.gd" id="10_tyn13"]
-[ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://character/_player/script/states/wall/wall_slide.gd" id="13_pah6a"]
-[ext_resource type="Script" uid="uid://y3inhprtivlv" path="res://character/_player/script/states/wall/wall_jump.gd" id="14_p1y4a"]
+[ext_resource type="Script" uid="uid://cp0e5rbfc4u2c" path="res://characters/_player/script/states/idle/idle.gd" id="7_khrki"]
+[ext_resource type="Texture2D" uid="uid://wqylcdxn5gtk" path="res://characters/froggy/assets/Wall Jump (32x32).png" id="7_ydpga"]
+[ext_resource type="Script" uid="uid://rnvaiksy3o6a" path="res://characters/_player/script/states/move/move.gd" id="8_c6xgn"]
+[ext_resource type="Script" uid="uid://b586jjb6d2v7o" path="res://characters/_player/script/states/jump/jump.gd" id="9_c6xgn"]
+[ext_resource type="Script" uid="uid://dos5r1j8a7vnw" path="res://characters/_player/script/states/fall/fall.gd" id="10_tyn13"]
+[ext_resource type="Script" uid="uid://bgd6c22r8v0uh" path="res://characters/_player/script/states/wall/wall_slide.gd" id="13_pah6a"]
+[ext_resource type="Script" uid="uid://y3inhprtivlv" path="res://characters/_player/script/states/wall/wall_jump.gd" id="14_p1y4a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t8fs"]
 atlas = ExtResource("2_8io72")
@@ -311,7 +311,8 @@ WALL_FRICTION = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_p1y4a")
-animation = &"wall"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

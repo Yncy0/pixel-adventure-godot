@@ -1,11 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1kuiu4t8yvwf"]
-
-[ext_resource type="PackedScene" uid="uid://ky8fuicnpydk" path="res://world/test_world.tscn" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://character/froggy/scene/froggy.tscn" id="3_h2yge"]
+[gd_scene format=3 uid="uid://c1kuiu4t8yvwf"]
 
 [node name="Main" type="Node"]
-
-[node name="TestWorld" parent="." instance=ExtResource("1_0xm2m")]
-
-[node name="Froggy" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(190, 402)
