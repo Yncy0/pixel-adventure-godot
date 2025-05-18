@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://eowrfmiqb722"]
+[gd_scene load_steps=20 format=3 uid="uid://eowrfmiqb722"]
 
 [ext_resource type="PackedScene" uid="uid://ddua662d8g17f" path="res://characters/enemy/_index/scene/enemy_base.tscn" id="1_k774q"]
 [ext_resource type="Script" uid="uid://d35n6sd3ruxv2" path="res://characters/enemy/chicken/script/chicken.gd" id="2_bomo7"]
@@ -107,6 +107,9 @@ animations = [{
 radius = 12.0
 height = 32.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o8b"]
+size = Vector2(386, 152)
+
 [node name="Chicken" instance=ExtResource("1_k774q")]
 script = ExtResource("2_bomo7")
 Speed = 100.0
@@ -118,3 +121,10 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_e2o8b")
+
+[node name="CollisionShape2D" parent="AreaPlayerDetect" index="0"]
+shape = SubResource("RectangleShape2D_e2o8b")
+debug_color = Color(0.680498, 0.3551, 0.899846, 0.42)
+
+[connection signal="body_entered" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_entered"]
+[connection signal="body_exited" from="AreaPlayerDetect" to="." method="_on_area_player_detect_body_exited"]
