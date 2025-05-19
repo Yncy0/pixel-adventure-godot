@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://c7qiwuvnfky31"]
+
+[ext_resource type="PackedScene" uid="uid://ddua662d8g17f" path="res://characters/enemy/base/scene/enemy_base.tscn" id="1_0iq1q"]
+[ext_resource type="Script" uid="uid://bfgg55jrpyo3" path="res://characters/enemy/birb/script/birb.gd" id="2_3nc7a"]
+[ext_resource type="Texture2D" uid="uid://bwf1m2pispya3" path="res://characters/enemy/birb/assets/Flying (32x32).png" id="2_r3klc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nc7a"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg2tw"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me3cx"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4lkf"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53p4d"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imdb8"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e14ja"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_af23w"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh6kx"]
+atlas = ExtResource("2_r3klc")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ekxb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nc7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg2tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me3cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4lkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53p4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imdb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e14ja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_af23w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh6kx")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3klc"]
+
+[node name="Birb" instance=ExtResource("1_0iq1q")]
+script = ExtResource("2_3nc7a")
+Fly_Time = 1.0
+Speed = 50.0
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_5ekxb")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.0509544
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_r3klc")
+
+[node name="FlyTimer" type="Timer" parent="." index="2"]
+
+[connection signal="timeout" from="FlyTimer" to="." method="_on_fly_timer_timeout"]
