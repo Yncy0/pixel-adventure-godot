@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wqylcdxn5gtk"
-path="res://.godot/imported/Wall Jump (32x32).png-751e18006a5dc6f92f2ff6bcc621562b.ctex"
+uid="uid://cmx3egbygeh0f"
+path="res://.godot/imported/Run (32x32).png-a7ca0ba4e93a5e83f4b40fb3893381e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/froggy/assets/Wall Jump (32x32).png"
-dest_files=["res://.godot/imported/Wall Jump (32x32).png-751e18006a5dc6f92f2ff6bcc621562b.ctex"]
+source_file="res://characters/_player/froggy/assets/Run (32x32).png"
+dest_files=["res://.godot/imported/Run (32x32).png-a7ca0ba4e93a5e83f4b40fb3893381e7.ctex"]
 
 [params]
 

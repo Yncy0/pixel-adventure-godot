@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqgiwglo7flq2"
-path="res://.godot/imported/Idle (32x32).png-4ef7ec76d6647307ce29abc02be199f8.ctex"
+uid="uid://bahqmo6ty6gqs"
+path="res://.godot/imported/Hit (32x32).png-729f4399bc40641ac9ce0ea1d2b3a6f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/froggy/assets/Idle (32x32).png"
-dest_files=["res://.godot/imported/Idle (32x32).png-4ef7ec76d6647307ce29abc02be199f8.ctex"]
+source_file="res://characters/_player/froggy/assets/Hit (32x32).png"
+dest_files=["res://.godot/imported/Hit (32x32).png-729f4399bc40641ac9ce0ea1d2b3a6f0.ctex"]
 
 [params]
 

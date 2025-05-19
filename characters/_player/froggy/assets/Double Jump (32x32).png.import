@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://04o6fp4vr47k"
-path="res://.godot/imported/Double Jump (32x32).png-a8259aab4b9c1f43ec1d54ec92dd62b0.ctex"
+path="res://.godot/imported/Double Jump (32x32).png-ebfcaa6370483ed4d277f0d78165fb12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/froggy/assets/Double Jump (32x32).png"
-dest_files=["res://.godot/imported/Double Jump (32x32).png-a8259aab4b9c1f43ec1d54ec92dd62b0.ctex"]
+source_file="res://characters/_player/froggy/assets/Double Jump (32x32).png"
+dest_files=["res://.godot/imported/Double Jump (32x32).png-ebfcaa6370483ed4d277f0d78165fb12.ctex"]
 
 [params]
 

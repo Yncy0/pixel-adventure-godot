@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b3l768mop3t6v" path="res://assets/Free/Background/Green.png" id="1_yntov"]
 [ext_resource type="Texture2D" uid="uid://d33ge60vof7wg" path="res://assets/Free/Terrain/Terrain (16x16).png" id="2_wfwh0"]
-[ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/froggy/scene/froggy.tscn" id="3_53guk"]
+[ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/_player/froggy/scene/froggy.tscn" id="3_53guk"]
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="4_534ga"]
 [ext_resource type="Texture2D" uid="uid://5gc6ororhxbp" path="res://assets/Free/Background/Gray.png" id="4_dt2ce"]
 [ext_resource type="PackedScene" uid="uid://c7qiwuvnfky31" path="res://characters/enemy/birb/scene/birb.tscn" id="5_b1hph"]
@@ -359,29 +359,23 @@ tile_map_data = PackedByteArray("AAAIABoAAAAHAAQAAAAJABoAAAAHAAQAAAAKABoAAAAHAAQ
 tile_set = SubResource("TileSet_1bvp3")
 metadata/_edit_group_ = true
 
-[node name="Trunk" parent="TestArea4" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
+[node name="Enemy" type="Node2D" parent="TestArea4"]
+
+[node name="Trunk" parent="TestArea4/Enemy" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
 position = Vector2(456, 400)
-Idle_Time = 3.0
-Wander_Time = 3.0
-_Player = NodePath("../../Froggy")
+_Player = NodePath("../../../Froggy")
 
-[node name="Trunk2" parent="TestArea4" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
+[node name="Trunk2" parent="TestArea4/Enemy" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
 position = Vector2(707, 400)
-Idle_Time = 3.0
-Wander_Time = 3.0
-_Player = NodePath("../../Froggy")
+_Player = NodePath("../../../Froggy")
 
-[node name="Trunk3" parent="TestArea4" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
+[node name="Trunk3" parent="TestArea4/Enemy" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
 position = Vector2(643, 257)
-Idle_Time = 3.0
-Wander_Time = 3.0
-_Player = NodePath("../../Froggy")
+_Player = NodePath("../../../Froggy")
 
-[node name="Trunk4" parent="TestArea4" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
+[node name="Trunk4" parent="TestArea4/Enemy" node_paths=PackedStringArray("_Player") instance=ExtResource("9_e5drx")]
 position = Vector2(907, 177)
-Idle_Time = 3.0
-Wander_Time = 3.0
-_Player = NodePath("../../Froggy")
+_Player = NodePath("../../../Froggy")
 
 [node name="Froggy" parent="." instance=ExtResource("3_53guk")]
 position = Vector2(3975, 400)

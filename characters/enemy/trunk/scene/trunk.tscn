@@ -331,15 +331,13 @@ height = 24.0
 
 [node name="Trunk" instance=ExtResource("1_a0yqx")]
 script = ExtResource("2_5v8ky")
-Idle_Time = 1.0
-Wander_Time = 1.0
 Speed = 50.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_kyge4")
-animation = &"idle"
+animation = &"shoot"
 autoplay = "idle"
-frame_progress = 0.0497347
+frame_progress = 0.267866
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(0, 3)
