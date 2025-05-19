@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bud8qwhjye3nu"
-path="res://.godot/imported/Jump (32x32).png-e11856350d6690b56d05e8716dcd8b0a.ctex"
+uid="uid://de017jbbm5kts"
+path="res://.godot/imported/Hit (64x32).png-69282b1afbbf98c79154e9fbceb75b85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/froggy/assets/Jump (32x32).png"
-dest_files=["res://.godot/imported/Jump (32x32).png-e11856350d6690b56d05e8716dcd8b0a.ctex"]
+source_file="res://characters/enemy/trunk/assets/Hit (64x32).png"
+dest_files=["res://.godot/imported/Hit (64x32).png-69282b1afbbf98c79154e9fbceb75b85.ctex"]
 
 [params]
 

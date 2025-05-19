@@ -19,9 +19,11 @@ config/icon="res://icon.svg"
 
 folder_colors={
 "res://assets/": "yellow",
+"res://bullet/": "purple",
 "res://characters/": "teal",
-"res://characters/_player/": "red",
-"res://characters/enemy/": "orange",
+"res://characters/_player/": "blue",
+"res://characters/_player/froggy/": "green",
+"res://characters/enemy/": "red",
 "res://states/": "gray",
 "res://world/": "green"
 }
@@ -59,6 +61,7 @@ jump={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
+2d_physics/layer_4="boolets"
 
 [rendering]
 
