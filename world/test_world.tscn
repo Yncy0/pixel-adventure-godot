@@ -293,7 +293,7 @@ tile_map_data = PackedByteArray("AAAIABoAAAAHAAAAAAAJABoAAAAHAAAAAAAKABoAAAAHAAA
 tile_set = SubResource("TileSet_1bvp3")
 
 [node name="Chicken" parent="TestArea1" node_paths=PackedStringArray("_Player") instance=ExtResource("4_534ga")]
-position = Vector2(449, 399)
+position = Vector2(478, 298)
 _Player = NodePath("../../Froggy")
 
 [node name="TestArea2" type="Node2D" parent="."]
@@ -378,4 +378,4 @@ position = Vector2(907, 177)
 _Player = NodePath("../../../Froggy")
 
 [node name="Froggy" parent="." instance=ExtResource("3_53guk")]
-position = Vector2(3975, 400)
+position = Vector2(287, 401)

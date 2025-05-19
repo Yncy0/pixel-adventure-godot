@@ -256,7 +256,7 @@ Speed = 10.0
 sprite_frames = SubResource("SpriteFrames_nes41")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.854944
+frame_progress = 0.899843
 
 [node name="CollisionShape2D" parent="." index="1"]
 rotation = 1.5708

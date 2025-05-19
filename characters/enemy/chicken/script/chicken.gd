@@ -63,7 +63,8 @@ func enemy_flip():
 		sprite.flip_h = false
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	handle_gravity(delta)
 	handle_state()
 	spot_enemy()
 	enemy_flip()

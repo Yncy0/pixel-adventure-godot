@@ -9,3 +9,8 @@ class_name EnemyBase extends CharacterBody2D
 
 var direction: float = 1.0
 var is_player: bool = false
+
+
+func handle_gravity(delta: float) -> void:
+	if !is_on_floor():
+		velocity += get_gravity() * delta 
