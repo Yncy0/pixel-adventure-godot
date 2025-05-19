@@ -2,6 +2,7 @@ class_name Snail extends EnemyBase
 
 
 @onready var ray_cast_wall: RayCast2D = $RayCastWall
+@onready var ray_cast_floor: RayCast2D = $RayCastFloor
 
 
 var shell_mode: bool = false : set = set_shell_mode
@@ -14,10 +15,6 @@ enum STATES {
 }
 
 var state: STATES = STATES.WALK
-
-
-func _ready() -> void:
-	direction = -1.0
 
 
 func handle_states() -> void:
@@ -39,6 +36,10 @@ func set_state(new_state: STATES) -> void:
 		return
 	
 	state = new_state
+
+
+func _ready() -> void:
+	direction = -1.0
 
 
 func idle() -> void:
@@ -64,7 +65,7 @@ func set_shell_mode(v: bool) -> void:
 
 
 func wall_bumped() -> void:
-	if is_on_wall() or ray_cast_wall.is_colliding(): 
+	if (is_on_wall() or ray_cast_wall.is_colliding()) or !ray_cast_floor.is_colliding(): 
 		direction *= -1.0
 
 
@@ -72,9 +73,11 @@ func flip() -> void:
 	if direction < 0:
 		sprite.flip_h = false
 		ray_cast_wall.target_position = Vector2(-20, 0)
+		ray_cast_floor.target_position = Vector2(0, -20)
 	else:
 		sprite.flip_h = true
 		ray_cast_wall.target_position = Vector2(20, 0)
+		ray_cast_floor.target_position = Vector2(0, 20)
 
 
 func _physics_process(_delta: float) -> void:
