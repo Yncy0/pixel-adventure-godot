@@ -6,7 +6,7 @@ class_name Birb extends EnemyBase
 @onready var fly_timer: Timer = $FlyTimer
 
 var start_y_pos: float 
-var direction: float = -1.00
+
 
 enum STATES {
 	FLY,
@@ -26,6 +26,7 @@ var sprite_y_offsets = {
 }
 
 func _ready() -> void:
+	direction = -1.00
 	fly_timer.start(Fly_Time)
 	start_y_pos = position.y
 

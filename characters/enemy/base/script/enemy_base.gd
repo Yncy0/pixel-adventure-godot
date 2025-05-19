@@ -7,4 +7,5 @@ class_name EnemyBase extends CharacterBody2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
+var direction: float = 1.0
 var is_player: bool = false

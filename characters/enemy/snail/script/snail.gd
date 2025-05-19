@@ -5,7 +5,6 @@ class_name Snail extends EnemyBase
 
 
 var shell_mode: bool = false : set = set_shell_mode
-var direction: float = -1.0
 
 enum STATES {
 	IDLE,
@@ -15,6 +14,10 @@ enum STATES {
 }
 
 var state: STATES = STATES.WALK
+
+
+func _ready() -> void:
+	direction = -1.0
 
 
 func handle_states() -> void:
@@ -29,6 +32,13 @@ func handle_states() -> void:
 			sprite.play("shell_idle")
 		STATES.SHELL_HIT:
 			pass
+
+
+func set_state(new_state: STATES) -> void:
+	if new_state == state:
+		return
+	
+	state = new_state
 
 
 func idle() -> void:
@@ -47,13 +57,6 @@ func walk() -> void:
 		velocity.x = direction * Speed
 	if shell_mode:
 		set_state(STATES.SHELL_IDLE)
-
-
-func set_state(new_state: STATES) -> void:
-	if new_state == state:
-		return
-	
-	state = new_state
 
 
 func set_shell_mode(v: bool) -> void:
@@ -77,8 +80,6 @@ func flip() -> void:
 func _physics_process(_delta: float) -> void:
 	handle_states()
 	flip()
-	
-	print(direction)
 	
 	move_and_slide()
 
