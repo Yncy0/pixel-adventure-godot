@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=11 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="Texture2D" uid="uid://b3l768mop3t6v" path="res://assets/Free/Background/Green.png" id="1_yntov"]
 [ext_resource type="Texture2D" uid="uid://d33ge60vof7wg" path="res://assets/Free/Terrain/Terrain (16x16).png" id="2_wfwh0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="4_534ga"]
 [ext_resource type="Texture2D" uid="uid://5gc6ororhxbp" path="res://assets/Free/Background/Gray.png" id="4_dt2ce"]
 [ext_resource type="PackedScene" uid="uid://c7qiwuvnfky31" path="res://characters/enemy/birb/scene/birb.tscn" id="5_b1hph"]
+[ext_resource type="Texture2D" uid="uid://cmww3di0gqopk" path="res://assets/Free/Background/Purple.png" id="6_3xmcv"]
+[ext_resource type="PackedScene" uid="uid://bkwnk4fv8domg" path="res://characters/enemy/snail/scene/snail.tscn" id="7_olf76"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("2_wfwh0")
@@ -315,5 +317,31 @@ position = Vector2(506, 257)
 Fly_Time = 3.0
 _Player = NodePath("../../Froggy")
 
+[node name="Birb3" parent="TestArea2" node_paths=PackedStringArray("_Player") instance=ExtResource("5_b1hph")]
+position = Vector2(616, 350)
+Fly_Time = 7.0
+_Player = NodePath("../../Froggy")
+
+[node name="Birb4" parent="TestArea2" node_paths=PackedStringArray("_Player") instance=ExtResource("5_b1hph")]
+position = Vector2(911, 376)
+Fly_Time = 4.0
+_Player = NodePath("../../Froggy")
+
+[node name="TestArea3" type="Node2D" parent="."]
+position = Vector2(2530, 0)
+
+[node name="TextureRect" type="TextureRect" parent="TestArea3"]
+offset_right = 1151.0
+offset_bottom = 645.0
+texture = ExtResource("6_3xmcv")
+stretch_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TestArea3"]
+tile_map_data = PackedByteArray("AAAIABoAAAAHAAgAAAAJABoAAAAHAAgAAAAKABoAAAAHAAgAAAALABoAAAAHAAgAAAAMABoAAAAHAAgAAAANABoAAAAHAAgAAAAOABoAAAAHAAgAAAAPABoAAAAHAAgAAAAQABoAAAAHAAgAAAARABoAAAAHAAgAAAASABoAAAAHAAgAAAATABoAAAAHAAgAAAAUABoAAAAHAAgAAAAVABoAAAAHAAgAAAAWABoAAAAHAAgAAAAXABoAAAAHAAgAAAAYABoAAAAHAAgAAAAZABoAAAAHAAgAAAAaABoAAAAHAAgAAAAbABoAAAAHAAgAAAAcABoAAAAHAAgAAAAdABoAAAAHAAgAAAAeABoAAAAHAAgAAAAfABoAAAAHAAgAAAAgABoAAAAHAAgAAAAhABoAAAAHAAgAAAAiABoAAAAHAAgAAAAjABoAAAAHAAgAAAAkABoAAAAHAAgAAAAlABoAAAAHAAgAAAAmABoAAAAHAAgAAAAnABoAAAAHAAgAAAAoABoAAAAHAAgAAAApABoAAAAHAAgAAAAqABoAAAAHAAgAAAArABoAAAAHAAgAAAAsABoAAAAHAAgAAAAtABoAAAAHAAgAAAAuABoAAAAHAAgAAAAvABoAAAAHAAgAAAAwABoAAAAHAAgAAAAxABoAAAAHAAgAAAAyABoAAAAHAAgAAAAzABoAAAAHAAgAAAA0ABoAAAAHAAgAAAA1ABoAAAAHAAgAAAA2ABoAAAAHAAgAAAA3ABoAAAAHAAgAAAA4ABoAAAAHAAgAAAA5ABoAAAAHAAgAAAA6ABoAAAAHAAgAAAA7ABoAAAAHAAgAAAAHABoAAAAGAAgAAAA8ABoAAAAIAAgAAAAHABsAAAAGAAoAAAA8ABsAAAAIAAoAAAAIABsAAAAHAAoAAAAJABsAAAAHAAoAAAAKABsAAAAHAAoAAAALABsAAAAHAAoAAAAMABsAAAAHAAoAAAANABsAAAAHAAoAAAAOABsAAAAHAAoAAAAPABsAAAAHAAoAAAAQABsAAAAHAAoAAAARABsAAAAHAAoAAAASABsAAAAHAAoAAAATABsAAAAHAAoAAAAUABsAAAAHAAoAAAAVABsAAAAHAAoAAAAWABsAAAAHAAoAAAAXABsAAAAHAAoAAAAYABsAAAAHAAoAAAAZABsAAAAHAAoAAAAaABsAAAAHAAoAAAAbABsAAAAHAAoAAAAcABsAAAAHAAoAAAAdABsAAAAHAAoAAAAeABsAAAAHAAoAAAAfABsAAAAHAAoAAAAgABsAAAAHAAoAAAAhABsAAAAHAAoAAAAiABsAAAAHAAoAAAAjABsAAAAHAAoAAAAkABsAAAAHAAoAAAAlABsAAAAHAAoAAAAmABsAAAAHAAoAAAAnABsAAAAHAAoAAAAoABsAAAAHAAoAAAApABsAAAAHAAoAAAAqABsAAAAHAAoAAAArABsAAAAHAAoAAAAsABsAAAAHAAoAAAAtABsAAAAHAAoAAAAuABsAAAAHAAoAAAAvABsAAAAHAAoAAAAwABsAAAAHAAoAAAAxABsAAAAHAAoAAAAyABsAAAAHAAoAAAAzABsAAAAHAAoAAAA0ABsAAAAHAAoAAAA1ABsAAAAHAAoAAAA2ABsAAAAHAAoAAAA3ABsAAAAHAAoAAAA4ABsAAAAHAAoAAAA5ABsAAAAHAAoAAAA6ABsAAAAHAAoAAAA7ABsAAAAHAAoAAAAVABkAAAAMAAUAAAAVABgAAAAMAAUAAAAiABkAAAAMAAUAAAAiABgAAAAMAAUAAAA=")
+tile_set = SubResource("TileSet_1bvp3")
+
+[node name="Snail" parent="TestArea3" instance=ExtResource("7_olf76")]
+position = Vector2(430, 404)
+
 [node name="Froggy" parent="." instance=ExtResource("3_53guk")]
-position = Vector2(1413, 401)
+position = Vector2(2692, 399)

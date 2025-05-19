@@ -55,7 +55,7 @@ func sprite_flip() -> void:
 		sprite.flip_h = true
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	handle_state()
 	sprite_flip()
 	
