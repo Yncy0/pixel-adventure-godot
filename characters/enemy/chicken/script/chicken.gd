@@ -9,6 +9,7 @@ enum STATES {
 }
 var state: STATES = STATES.IDLE
 
+
 func handle_state():
 	match state:
 		STATES.IDLE:
@@ -19,11 +20,13 @@ func handle_state():
 			sprite.play("run")
 			chase()
 
+
 func set_state(new_state: STATES) -> void:
 	if new_state == state:
 		return
 	
 	state = new_state
+
 
 func idle():
 	velocity.x = move_toward(velocity.x, 0.0, Speed)
@@ -31,12 +34,14 @@ func idle():
 	if is_player:
 		set_state(STATES.CHASE)
 
+
 func chase():
 	if !is_player:
 		set_state(STATES.IDLE)
 	
 	var dir = (_Player.global_position - global_position).normalized()
 	velocity.x = dir.x * Speed
+
 
 func spot_enemy():
 	if ray.is_colliding():
@@ -48,6 +53,7 @@ func spot_enemy():
 			is_player = true
 			set_state(STATES.CHASE)
 
+
 func enemy_flip():
 	if velocity.x > 0:
 		ray.rotation_degrees = 0
@@ -55,6 +61,7 @@ func enemy_flip():
 	elif velocity.x < 0:
 		ray.rotation_degrees = 180
 		sprite.flip_h = false
+
 
 func _physics_process(_delta: float) -> void:
 	handle_state()
