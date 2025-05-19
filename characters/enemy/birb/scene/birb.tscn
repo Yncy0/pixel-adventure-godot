@@ -72,7 +72,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"fly",
-"speed": 24.0
+"speed": 16.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r3klc"]
@@ -80,17 +80,19 @@ animations = [{
 [node name="Birb" instance=ExtResource("1_0iq1q")]
 script = ExtResource("2_3nc7a")
 Fly_Time = 1.0
-Speed = 50.0
+Speed = 20.0
+Jump_Velocity = -100.0
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_5ekxb")
 animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.0509544
+frame_progress = 0.223044
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_r3klc")
 
 [node name="FlyTimer" type="Timer" parent="." index="2"]
 
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="timeout" from="FlyTimer" to="." method="_on_fly_timer_timeout"]
