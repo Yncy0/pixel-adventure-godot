@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://e7a62eqsgxs2"]
+
+[ext_resource type="Script" uid="uid://7yiq785v5i26" path="res://world/props/pickups/base/script/pickup_base.gd" id="1_o5b81"]
+[ext_resource type="Texture2D" uid="uid://dakyfdnybklg3" path="res://world/props/pickups/base/assets/Collected.png" id="2_3uw5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25vxk"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa42n"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ckrk"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_moyxl"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blupq"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1d2y7"]
+atlas = ExtResource("2_3uw5h")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2oqyb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25vxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa42n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ckrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_moyxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blupq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1d2y7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="PickupBase" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_o5b81")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+
+[node name="CollectedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_2oqyb")
+frame = 5
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="CollectedSprite" to="." method="_on_collected_sprite_animation_finished"]

@@ -10,7 +10,7 @@ var is_falling: bool = false
 
 func _physics_process(delta: float) -> void:
 	if is_falling:
-		velocity.y += 980 / 2 * delta
+		velocity.y += 980.0 / 2.0 * delta
 		animated_sprite_2d.play("off")
 		
 	
