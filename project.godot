@@ -25,7 +25,8 @@ folder_colors={
 "res://characters/_player/froggy/": "green",
 "res://characters/enemy/": "red",
 "res://states/": "gray",
-"res://world/": "green"
+"res://world/": "green",
+"res://world/traps/": "gray"
 }
 
 [input]
