@@ -111,4 +111,4 @@ position = Vector2(907, 177)
 _Player = NodePath("../../../Froggy")
 
 [node name="Froggy" parent="." instance=ExtResource("10_yy8ck")]
-position = Vector2(287, 401)
+position = Vector2(3936, 401)

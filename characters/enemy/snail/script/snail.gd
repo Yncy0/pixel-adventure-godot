@@ -66,18 +66,18 @@ func set_shell_mode(v: bool) -> void:
 
 func wall_bumped() -> void:
 	if (is_on_wall() or ray_cast_wall.is_colliding()) or !ray_cast_floor.is_colliding(): 
-		direction *= -1.0
+		direction *= -1
 
 
 func flip() -> void:
 	if direction < 0:
 		sprite.flip_h = false
 		ray_cast_wall.target_position = Vector2(-20, 0)
-		ray_cast_floor.target_position = Vector2(0, -20)
+		ray_cast_floor.position.x = -14
 	else:
 		sprite.flip_h = true
 		ray_cast_wall.target_position = Vector2(20, 0)
-		ray_cast_floor.target_position = Vector2(0, 20)
+		ray_cast_floor.position.x = 14
 
 
 func _physics_process(_delta: float) -> void:
