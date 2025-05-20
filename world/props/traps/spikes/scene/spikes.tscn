@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu0ak2s8fa10m"]
+
+[ext_resource type="PackedScene" uid="uid://dgpyxd8604hpr" path="res://world/props/traps/base/scene/trap_base.tscn" id="1_v3cqi"]
+[ext_resource type="Texture2D" uid="uid://b8ua4axv07hs6" path="res://world/props/traps/spikes/assets/Idle.png" id="2_1016s"]
+[ext_resource type="Script" uid="uid://cftofn1pxdj34" path="res://world/props/traps/spikes/script/spikes.gd" id="2_nvptt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1016s"]
+atlas = ExtResource("2_1016s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kaex7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1016s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1016s"]
+size = Vector2(17, 10)
+
+[node name="Spikes" instance=ExtResource("1_v3cqi")]
+sprite_frames = SubResource("SpriteFrames_kaex7")
+script = ExtResource("2_nvptt")
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_1016s")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+
+[editable path="HitBox"]

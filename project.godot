@@ -11,21 +11,30 @@ config_version=5
 [application]
 
 config/name="New Game 3A"
-run/main_scene="uid://ky8fuicnpydk"
+run/main_scene="uid://c1kuiu4t8yvwf"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*res://autoload/scene_manager/scene_manager.gd"
 
 [file_customization]
 
 folder_colors={
 "res://assets/": "yellow",
+"res://autoload/": "gray",
 "res://bullet/": "purple",
 "res://characters/": "teal",
 "res://characters/_player/": "blue",
 "res://characters/_player/froggy/": "green",
 "res://characters/enemy/": "red",
+"res://components/": "orange",
+"res://gui/": "pink",
 "res://states/": "gray",
-"res://world/": "green"
+"res://world/": "green",
+"res://world/props/": "teal",
+"res://world/traps/": "gray"
 }
 
 [input]
@@ -62,6 +71,7 @@ jump={
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="boolets"
+2d_physics/layer_5="traps"
 
 [rendering]
 

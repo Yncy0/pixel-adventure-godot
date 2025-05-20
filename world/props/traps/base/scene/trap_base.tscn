@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgpyxd8604hpr"]
+
+[ext_resource type="PackedScene" uid="uid://btsxnkr4tggdk" path="res://components/hitbox/scene/hit_box.tscn" id="1_gcyeb"]
+
+[node name="TrapBase" type="AnimatedSprite2D"]
+
+[node name="HitBox" parent="." instance=ExtResource("1_gcyeb")]
+collision_layer = 8
+collision_mask = 2
+
+[editable path="HitBox"]
