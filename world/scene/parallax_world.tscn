@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cbkgr3pah6mc8"]
+
+[node name="ParallaxWorld" type="Parallax2D"]
+repeat_size = Vector2(1150, 640)
+autoscroll = Vector2(0, 50)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+stretch_mode = 1
