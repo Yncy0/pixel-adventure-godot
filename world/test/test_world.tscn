@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=15 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="TileSet" uid="uid://xqmeuhh2wftr" path="res://world/res/tile_set.tres" id="2_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="3_6hhn1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ne1fhx0gvcw" path="res://world/props/pickups/apple/scene/apple.tscn" id="9_cc344"]
 [ext_resource type="PackedScene" uid="uid://bmq42e453ofa3" path="res://world/props/traps/rock_head/scene/rock_head.tscn" id="9_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://bptc6v32mx6xs" path="res://characters/enemy/trunk/scene/trunk.tscn" id="9_wuaj2"]
+[ext_resource type="PackedScene" uid="uid://cfygd78qb7m4i" path="res://characters/enemy/mushroom/scene/mushroom.tscn" id="10_0bh0a"]
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="10_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://bu0ak2s8fa10m" path="res://world/props/traps/spikes/scene/spikes.tscn" id="10_xmd0c"]
 [ext_resource type="PackedScene" uid="uid://bccyg1nuo3i71" path="res://world/props/traps/saw/scene/saw.tscn" id="11_6hhn1"]
@@ -146,6 +147,9 @@ metadata/_edit_group_ = true
 
 [node name="Apple" parent="TestArea6" instance=ExtResource("9_cc344")]
 position = Vector2(901, 391)
+
+[node name="Mushroom" parent="TestArea6" instance=ExtResource("10_0bh0a")]
+position = Vector2(778, 400)
 
 [node name="TestArea7" type="Node2D" parent="."]
 position = Vector2(2528, 979)

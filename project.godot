@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 SceneManager="*res://autoload/scene_manager/scene_manager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [file_customization]
 
 folder_colors={
@@ -76,3 +80,4 @@ jump={
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.0768358, 0.0768358, 0.0768358, 1)

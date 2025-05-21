@@ -3,5 +3,7 @@
 [node name="AreaPlayerDetect" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+debug_color = Color(0.615833, 0.388844, 0.93618, 0.42)

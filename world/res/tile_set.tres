@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://xqmeuhh2wftr"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://xqmeuhh2wftr"]
 
 [ext_resource type="Texture2D" uid="uid://d33ge60vof7wg" path="res://world/assets/Terrain/Terrain (16x16).png" id="1_ouofx"]
+[ext_resource type="PackedScene" uid="uid://c8ne1fhx0gvcw" path="res://world/props/pickups/apple/scene/apple.tscn" id="2_y7xl2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_ouofx")
@@ -288,6 +289,10 @@ texture = ExtResource("1_ouofx")
 20:10/0 = 0
 20:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_awyvg"]
+scenes/2/scene = ExtResource("2_y7xl2")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h2yge")
+sources/1 = SubResource("TileSetScenesCollectionSource_awyvg")
