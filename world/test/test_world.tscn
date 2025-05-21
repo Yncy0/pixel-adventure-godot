@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=14 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="TileSet" uid="uid://xqmeuhh2wftr" path="res://world/res/tile_set.tres" id="2_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="3_6hhn1"]
 [ext_resource type="PackedScene" uid="uid://c7qiwuvnfky31" path="res://characters/enemy/birb/scene/birb.tscn" id="5_0bh0a"]
 [ext_resource type="Texture2D" uid="uid://cmww3di0gqopk" path="res://world/assets/Background/Purple.png" id="6_83gya"]
 [ext_resource type="PackedScene" uid="uid://bkwnk4fv8domg" path="res://characters/enemy/snail/scene/snail.tscn" id="7_plqjb"]
+[ext_resource type="PackedScene" uid="uid://c8ne1fhx0gvcw" path="res://world/props/pickups/apple/scene/apple.tscn" id="9_cc344"]
 [ext_resource type="PackedScene" uid="uid://bmq42e453ofa3" path="res://world/props/traps/rock_head/scene/rock_head.tscn" id="9_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://bptc6v32mx6xs" path="res://characters/enemy/trunk/scene/trunk.tscn" id="9_wuaj2"]
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="10_mqs1w"]
@@ -143,6 +144,9 @@ tile_map_data = PackedByteArray("AAAIABoAAAAHAAQAAAAJABoAAAAHAAQAAAAKABoAAAAHAAQ
 tile_set = ExtResource("2_mqs1w")
 metadata/_edit_group_ = true
 
+[node name="Apple" parent="TestArea6" instance=ExtResource("9_cc344")]
+position = Vector2(901, 391)
+
 [node name="TestArea7" type="Node2D" parent="."]
 position = Vector2(2528, 979)
 
@@ -184,4 +188,4 @@ tile_set = ExtResource("2_mqs1w")
 metadata/_edit_group_ = true
 
 [node name="Froggy" parent="." instance=ExtResource("11_xmd0c")]
-position = Vector2(2658, 1379)
+position = Vector2(2101, 1379)
