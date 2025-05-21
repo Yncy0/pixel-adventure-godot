@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lh41hkmr63n5"
-path="res://.godot/imported/End (Pressed) (64x64).png-17c6c26f4e0e14f781a0ea72ed1df810.ctex"
+uid="uid://11ie5ydyjxy4"
+path="res://.godot/imported/End (Idle).png-93dfe94da2d3836a409a0ee120a9fbb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Items/Checkpoints/End/End (Pressed) (64x64).png"
-dest_files=["res://.godot/imported/End (Pressed) (64x64).png-17c6c26f4e0e14f781a0ea72ed1df810.ctex"]
+source_file="res://world/props/end_point/assets/End/End (Idle).png"
+dest_files=["res://.godot/imported/End (Idle).png-93dfe94da2d3836a409a0ee120a9fbb6.ctex"]
 
 [params]
 
