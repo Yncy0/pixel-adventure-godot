@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqyl8opgyo2qs"
-path="res://.godot/imported/Idle.png-326c24f06eebe97e710b427ebf28234d.ctex"
+uid="uid://dt6x6ws2l6eym"
+path="res://.godot/imported/Blink (42x42).png-e8b5fd397643eda28cc4fc5584c7a81d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Traps/Rock Head/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-326c24f06eebe97e710b427ebf28234d.ctex"]
+source_file="res://world/props/traps/rock_head/assets/Blink (42x42).png"
+dest_files=["res://.godot/imported/Blink (42x42).png-e8b5fd397643eda28cc4fc5584c7a81d.ctex"]
 
 [params]
 

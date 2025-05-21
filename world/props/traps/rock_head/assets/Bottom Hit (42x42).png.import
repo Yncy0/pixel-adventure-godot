@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4anu22eimcyk"
-path="res://.godot/imported/Left Hit (42x42).png-a17806a66bbec8536baa0644b96a3051.ctex"
+uid="uid://da142bo0jnlxd"
+path="res://.godot/imported/Bottom Hit (42x42).png-6c648ba7113702c22ca921ed4f42529a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Traps/Rock Head/Left Hit (42x42).png"
-dest_files=["res://.godot/imported/Left Hit (42x42).png-a17806a66bbec8536baa0644b96a3051.ctex"]
+source_file="res://world/props/traps/rock_head/assets/Bottom Hit (42x42).png"
+dest_files=["res://.godot/imported/Bottom Hit (42x42).png-6c648ba7113702c22ca921ed4f42529a.ctex"]
 
 [params]
 

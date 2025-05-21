@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dms0vfbkng0ed"
-path="res://.godot/imported/Chain.png-f153c50caea413b518ff54564cd29179.ctex"
+uid="uid://gthcc7cfckfo"
+path="res://.godot/imported/Right Hit (42x42).png-bd5d0276c5b67e4f2f70ec5d4c365088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Traps/Saw/Chain.png"
-dest_files=["res://.godot/imported/Chain.png-f153c50caea413b518ff54564cd29179.ctex"]
+source_file="res://world/props/traps/rock_head/assets/Right Hit (42x42).png"
+dest_files=["res://.godot/imported/Right Hit (42x42).png-bd5d0276c5b67e4f2f70ec5d4c365088.ctex"]
 
 [params]
 

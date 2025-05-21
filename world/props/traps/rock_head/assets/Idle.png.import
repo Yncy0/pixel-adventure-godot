@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwg0dqnm0x4o2"
-path="res://.godot/imported/On (38x38).png-00c1a8cb6d894ec0ab056b027d3c5005.ctex"
+uid="uid://bqyl8opgyo2qs"
+path="res://.godot/imported/Idle.png-0662225d618ed196fb6881bb7b6efab2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Traps/Saw/On (38x38).png"
-dest_files=["res://.godot/imported/On (38x38).png-00c1a8cb6d894ec0ab056b027d3c5005.ctex"]
+source_file="res://world/props/traps/rock_head/assets/Idle.png"
+dest_files=["res://.godot/imported/Idle.png-0662225d618ed196fb6881bb7b6efab2.ctex"]
 
 [params]
 

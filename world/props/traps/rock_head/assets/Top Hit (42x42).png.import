@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ssl4lkra0ub"
-path="res://.godot/imported/Off.png-cb580ecd96b3420d84f9a265b3338389.ctex"
+uid="uid://bkaxowpafhtbm"
+path="res://.godot/imported/Top Hit (42x42).png-38c3e872a481a6c1cb53f4b8a6c8d96c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Free/Traps/Saw/Off.png"
-dest_files=["res://.godot/imported/Off.png-cb580ecd96b3420d84f9a265b3338389.ctex"]
+source_file="res://world/props/traps/rock_head/assets/Top Hit (42x42).png"
+dest_files=["res://.godot/imported/Top Hit (42x42).png-38c3e872a481a6c1cb53f4b8a6c8d96c.ctex"]
 
 [params]
 
