@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=13 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="TileSet" uid="uid://xqmeuhh2wftr" path="res://world/res/tile_set.tres" id="2_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="3_6hhn1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="10_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://bu0ak2s8fa10m" path="res://world/props/traps/spikes/scene/spikes.tscn" id="10_xmd0c"]
 [ext_resource type="PackedScene" uid="uid://bccyg1nuo3i71" path="res://world/props/traps/saw/scene/saw.tscn" id="11_6hhn1"]
+[ext_resource type="PackedScene" uid="uid://c7egs0lba1jc2" path="res://world/props/traps/falling_platforms/scene/falling_platform.tscn" id="11_cc344"]
 [ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/_player/froggy/scene/froggy.tscn" id="11_xmd0c"]
 
 [node name="TestWorld" type="Node2D"]
@@ -161,6 +162,12 @@ position = Vector2(233, 288)
 
 [node name="Spikes" parent="TestArea7" instance=ExtResource("10_xmd0c")]
 position = Vector2(325, 408)
+
+[node name="FallingPlatform" parent="TestArea7" instance=ExtResource("11_cc344")]
+position = Vector2(83, 364)
+
+[node name="FallingPlatform2" parent="TestArea7" instance=ExtResource("11_cc344")]
+position = Vector2(376, 340)
 
 [node name="TestArea8" type="Node2D" parent="."]
 position = Vector2(3812, 979)

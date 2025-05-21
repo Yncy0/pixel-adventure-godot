@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7egs0lba1jc2"]
+
+[ext_resource type="Script" uid="uid://d1gkrkd6s4nvq" path="res://world/props/traps/falling_platforms/script/falling_platform.gd" id="1_7hovf"]
+[ext_resource type="Texture2D" uid="uid://ccdjhf727f0gr" path="res://world/props/traps/falling_platforms/assets/On (32x10).png" id="2_n4eyg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5q7s"]
+atlas = ExtResource("2_n4eyg")
+region = Rect2(0, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxgvm"]
+atlas = ExtResource("2_n4eyg")
+region = Rect2(32, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpdxd"]
+atlas = ExtResource("2_n4eyg")
+region = Rect2(64, 0, 32, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b77gx"]
+atlas = ExtResource("2_n4eyg")
+region = Rect2(96, 0, 32, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fp47t"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5q7s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxgvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpdxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b77gx")
+}],
+"loop": true,
+"name": &"on",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4eyg"]
+size = Vector2(32, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5q7s"]
+size = Vector2(32, 10)
+
+[node name="FallingPlatform" type="CharacterBody2D"]
+script = ExtResource("1_7hovf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fp47t")
+animation = &"on"
+autoplay = "on"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_n4eyg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_h5q7s")
+debug_color = Color(0.656163, 0.516682, 0, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
