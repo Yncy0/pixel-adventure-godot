@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bioa5sq5mwwur"]
+[gd_scene load_steps=11 format=4 uid="uid://bioa5sq5mwwur"]
 
 [ext_resource type="PackedScene" uid="uid://cbkgr3pah6mc8" path="res://world/scene/parallax_world.tscn" id="1_f644e"]
 [ext_resource type="Texture2D" uid="uid://c6uexnh4vwusm" path="res://world/assets/Background/Blue.png" id="2_2as6y"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bmq42e453ofa3" path="res://world/props/traps/rock_head/scene/rock_head.tscn" id="4_p4rbg"]
 [ext_resource type="PackedScene" uid="uid://cixlhn1as18vf" path="res://characters/_player/scene/player_camera.tscn" id="5_b2exc"]
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="8_8hyvk"]
+[ext_resource type="PackedScene" uid="uid://bmw3ke1q2p2og" path="res://gui/pause_screen/scene/pause_screen.tscn" id="10_6ia0i"]
 
 [node name="Tutorial2" type="Node2D"]
 
@@ -130,5 +131,9 @@ position = Vector2(173, 113)
 Camera_Limit_Left = 0
 Camera_Limit_Top = 0
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("10_6ia0i")]
 
 [editable path="ParallaxWorld"]

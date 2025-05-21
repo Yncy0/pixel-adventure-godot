@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ritqvs33xaf8"]
+[gd_scene load_steps=10 format=4 uid="uid://ritqvs33xaf8"]
 
 [ext_resource type="PackedScene" uid="uid://cbkgr3pah6mc8" path="res://world/scene/parallax_world.tscn" id="1_i4m3q"]
 [ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/_player/froggy/scene/froggy.tscn" id="1_isaj7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="5_goivk"]
 [ext_resource type="PackedScene" uid="uid://cy14ar5oddgon" path="res://components/kill_zone/scene/scene/kill_zone.tscn" id="6_sv0x4"]
 [ext_resource type="PackedScene" uid="uid://cixlhn1as18vf" path="res://characters/_player/scene/player_camera.tscn" id="7_v5mo7"]
+[ext_resource type="PackedScene" uid="uid://bmw3ke1q2p2og" path="res://gui/pause_screen/scene/pause_screen.tscn" id="9_w2l2a"]
 
 [node name="Tutorial1" type="Node2D"]
 
@@ -87,5 +88,27 @@ Camera_Limit_Left = 0
 Camera_Limit_Top = -15
 Camera_Limit_Right = 2048
 Camera_Limit_Bottom = 657
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_w2l2a")]
+
+[connection signal="body_entered" from="TileMapLayer/Apple" to="TileMapLayer/Apple" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104302" to="TileMapLayer/@Area2D@104302" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104303" to="TileMapLayer/@Area2D@104303" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104304" to="TileMapLayer/@Area2D@104304" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104305" to="TileMapLayer/@Area2D@104305" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104306" to="TileMapLayer/@Area2D@104306" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104307" to="TileMapLayer/@Area2D@104307" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104308" to="TileMapLayer/@Area2D@104308" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104309" to="TileMapLayer/@Area2D@104309" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104310" to="TileMapLayer/@Area2D@104310" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104311" to="TileMapLayer/@Area2D@104311" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104312" to="TileMapLayer/@Area2D@104312" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104313" to="TileMapLayer/@Area2D@104313" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104314" to="TileMapLayer/@Area2D@104314" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104315" to="TileMapLayer/@Area2D@104315" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104316" to="TileMapLayer/@Area2D@104316" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104317" to="TileMapLayer/@Area2D@104317" method="_on_body_player_entered"]
 
 [editable path="ParallaxWorld"]

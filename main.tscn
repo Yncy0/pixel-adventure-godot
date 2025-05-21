@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1kuiu4t8yvwf"]
 
-[ext_resource type="PackedScene" uid="uid://ritqvs33xaf8" path="res://world/levels/tutorial/tutorial_1.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://cuiolxn52tq5o" path="res://gui/starting_menu/scene/starting_menu.tscn" id="1_ig7tw"]
 
 [node name="Main" type="Node"]
 
-[node name="Tutorial1" parent="." instance=ExtResource("1_ig7tw")]
+[node name="StartingMenu" parent="." instance=ExtResource("1_ig7tw")]
