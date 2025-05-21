@@ -10,7 +10,7 @@ var loading_status: int
 
 
 func _ready() -> void:
-	scene_path = SceneManager.next_scened
+	scene_path = SceneManager.next_scene
 	ResourceLoader.load_threaded_request(scene_path)
 
 func _process(_delta: float) -> void:

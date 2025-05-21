@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=12 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="Texture2D" uid="uid://b3l768mop3t6v" path="res://world/assets/Background/Green.png" id="1_mqs1w"]
 [ext_resource type="TileSet" uid="uid://xqmeuhh2wftr" path="res://world/res/tile_set.tres" id="2_mqs1w"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b5jau45h7wcdg" path="res://world/assets/Background/Brown.png" id="8_ov3kn"]
 [ext_resource type="PackedScene" uid="uid://bptc6v32mx6xs" path="res://characters/enemy/trunk/scene/trunk.tscn" id="9_wuaj2"]
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="10_mqs1w"]
+[ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/_player/froggy/scene/froggy.tscn" id="11_xmd0c"]
 
 [node name="TestWorld" type="Node2D"]
 
@@ -118,3 +119,6 @@ metadata/_edit_group_ = true
 [node name="EndPoint" parent="TestArea5" instance=ExtResource("10_mqs1w")]
 position = Vector2(484, 384)
 next_scene = "res://world/test/test_world_2.tscn"
+
+[node name="Froggy" parent="." instance=ExtResource("11_xmd0c")]
+position = Vector2(330, 1380)
