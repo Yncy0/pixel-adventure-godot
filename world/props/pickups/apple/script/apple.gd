@@ -7,5 +7,6 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_player_entered(body: Node2D) -> void:
 	if body is Player:
+		PlayerStatus.score += 1
 		collected = true
 		collected_sprite.play("default")

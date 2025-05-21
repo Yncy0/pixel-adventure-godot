@@ -93,4 +93,22 @@ Camera_Limit_Bottom = 657
 
 [node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_w2l2a")]
 
+[connection signal="body_entered" from="TileMapLayer/Apple" to="TileMapLayer/Apple" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104302" to="TileMapLayer/@Area2D@104302" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104303" to="TileMapLayer/@Area2D@104303" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104304" to="TileMapLayer/@Area2D@104304" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104305" to="TileMapLayer/@Area2D@104305" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104306" to="TileMapLayer/@Area2D@104306" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104307" to="TileMapLayer/@Area2D@104307" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104308" to="TileMapLayer/@Area2D@104308" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104309" to="TileMapLayer/@Area2D@104309" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104310" to="TileMapLayer/@Area2D@104310" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104311" to="TileMapLayer/@Area2D@104311" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104312" to="TileMapLayer/@Area2D@104312" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104313" to="TileMapLayer/@Area2D@104313" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104314" to="TileMapLayer/@Area2D@104314" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104315" to="TileMapLayer/@Area2D@104315" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104316" to="TileMapLayer/@Area2D@104316" method="_on_body_player_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@104317" to="TileMapLayer/@Area2D@104317" method="_on_body_player_entered"]
+
 [editable path="ParallaxWorld"]
