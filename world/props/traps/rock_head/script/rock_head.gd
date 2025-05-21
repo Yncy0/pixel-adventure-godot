@@ -49,9 +49,6 @@ func _physics_process(delta: float) -> void:
 	if is_on_ceiling():
 		ray_cast.set_deferred("enabled", true)
 	
-	print("OG POS ", original_position.y)
-	print("POS", position.y)
-	
 	move_and_slide()
 
 

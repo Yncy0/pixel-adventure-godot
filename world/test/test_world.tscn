@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://ky8fuicnpydk"]
+[gd_scene load_steps=12 format=4 uid="uid://ky8fuicnpydk"]
 
 [ext_resource type="TileSet" uid="uid://xqmeuhh2wftr" path="res://world/res/tile_set.tres" id="2_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://eowrfmiqb722" path="res://characters/enemy/chicken/scene/chicken.tscn" id="3_6hhn1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bmq42e453ofa3" path="res://world/props/traps/rock_head/scene/rock_head.tscn" id="9_mqs1w"]
 [ext_resource type="PackedScene" uid="uid://bptc6v32mx6xs" path="res://characters/enemy/trunk/scene/trunk.tscn" id="9_wuaj2"]
 [ext_resource type="PackedScene" uid="uid://b4mqdq5h63cty" path="res://world/props/end_point/scene/end_point.tscn" id="10_mqs1w"]
+[ext_resource type="PackedScene" uid="uid://bu0ak2s8fa10m" path="res://world/props/traps/spikes/scene/spikes.tscn" id="10_xmd0c"]
 [ext_resource type="PackedScene" uid="uid://bccyg1nuo3i71" path="res://world/props/traps/saw/scene/saw.tscn" id="11_6hhn1"]
 [ext_resource type="PackedScene" uid="uid://co2pn00d3aq6n" path="res://characters/_player/froggy/scene/froggy.tscn" id="11_xmd0c"]
 
@@ -157,6 +158,23 @@ metadata/_edit_group_ = true
 
 [node name="RockHead" parent="TestArea7" instance=ExtResource("9_mqs1w")]
 position = Vector2(233, 288)
+
+[node name="Spikes" parent="TestArea7" instance=ExtResource("10_xmd0c")]
+position = Vector2(325, 408)
+
+[node name="TestArea8" type="Node2D" parent="."]
+position = Vector2(3812, 979)
+
+[node name="TextureRect" type="TextureRect" parent="TestArea8"]
+offset_right = 1151.0
+offset_bottom = 645.0
+texture = ExtResource("6_83gya")
+stretch_mode = 1
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TestArea8"]
+tile_map_data = PackedByteArray("AAAIABoAAAAHAAQAAAAJABoAAAAHAAQAAAAKABoAAAAHAAQAAAALABoAAAAHAAQAAAAMABoAAAAHAAQAAAANABoAAAAHAAQAAAAOABoAAAAHAAQAAAAPABoAAAAHAAQAAAAQABoAAAAHAAQAAAARABoAAAAHAAQAAAASABoAAAAHAAQAAAATABoAAAAHAAQAAAAUABoAAAAHAAQAAAAVABoAAAAHAAQAAAAWABoAAAAHAAQAAAAXABoAAAAHAAQAAAAYABoAAAAHAAQAAAAZABoAAAAHAAQAAAAaABoAAAAHAAQAAAAbABoAAAAHAAQAAAAcABoAAAAHAAQAAAAdABoAAAAHAAQAAAAeABoAAAAHAAQAAAAfABoAAAAHAAQAAAAgABoAAAAHAAQAAAAhABoAAAAHAAQAAAAiABoAAAAHAAQAAAAjABoAAAAHAAQAAAAkABoAAAAHAAQAAAAlABoAAAAHAAQAAAAmABoAAAAHAAQAAAAnABoAAAAHAAQAAAAoABoAAAAHAAQAAAAqABoAAAAHAAQAAAArABoAAAAHAAQAAAAsABoAAAAHAAQAAAAtABoAAAAHAAQAAAAuABoAAAAHAAQAAAAvABoAAAAHAAQAAAAwABoAAAAHAAQAAAAxABoAAAAHAAQAAAAyABoAAAAHAAQAAAAzABoAAAAHAAQAAAA0ABoAAAAHAAQAAAA1ABoAAAAHAAQAAAA2ABoAAAAHAAQAAAA3ABoAAAAHAAQAAAA4ABoAAAAHAAQAAAA5ABoAAAAHAAQAAAA6ABoAAAAHAAQAAAA7ABoAAAAHAAQAAAAHABoAAAAGAAQAAAA8ABoAAAAIAAQAAAAHABsAAAAGAAYAAAA8ABsAAAAIAAYAAAAIABsAAAAHAAYAAAAJABsAAAAHAAYAAAAKABsAAAAHAAYAAAALABsAAAAHAAYAAAAMABsAAAAHAAYAAAANABsAAAAHAAYAAAAOABsAAAAHAAYAAAAPABsAAAAHAAYAAAAQABsAAAAHAAYAAAARABsAAAAHAAYAAAASABsAAAAHAAYAAAATABsAAAAHAAYAAAAUABsAAAAHAAYAAAAVABsAAAAHAAYAAAAWABsAAAAHAAYAAAAXABsAAAAHAAYAAAAYABsAAAAHAAYAAAAZABsAAAAHAAYAAAAaABsAAAAHAAYAAAAbABsAAAAHAAYAAAAcABsAAAAHAAYAAAAdABsAAAAHAAYAAAAeABsAAAAHAAYAAAAfABsAAAAHAAYAAAAgABsAAAAHAAYAAAAhABsAAAAHAAYAAAAiABsAAAAHAAYAAAAjABsAAAAHAAYAAAAkABsAAAAHAAYAAAAlABsAAAAHAAYAAAAmABsAAAAHAAYAAAAnABsAAAAHAAYAAAAoABsAAAAHAAYAAAApABsAAAAHAAYAAAAqABsAAAAHAAYAAAArABsAAAAHAAYAAAAsABsAAAAHAAYAAAAtABsAAAAHAAYAAAAuABsAAAAHAAYAAAAvABsAAAAHAAYAAAAwABsAAAAHAAYAAAAxABsAAAAHAAYAAAAyABsAAAAHAAYAAAAzABsAAAAHAAYAAAA0ABsAAAAHAAYAAAA1ABsAAAAHAAYAAAA2ABsAAAAHAAYAAAA3ABsAAAAHAAYAAAA4ABsAAAAHAAYAAAA5ABsAAAAHAAYAAAA6ABsAAAAHAAYAAAA7ABsAAAAHAAYAAAApABoAAAAHAAQAAAA=")
+tile_set = ExtResource("2_mqs1w")
+metadata/_edit_group_ = true
 
 [node name="Froggy" parent="." instance=ExtResource("11_xmd0c")]
 position = Vector2(2658, 1379)
