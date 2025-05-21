@@ -9,6 +9,7 @@ class_name Player extends CharacterBody2D
 @export var WALL_JUMP_FORCE := 100.0
 @export var MAX_JUMPS = 2
 
+
 @onready var sprite = $AnimatedSprite2D
 @onready var buffer_timer: Timer = $BufferTimer
 @onready var coyote_timer: Timer = $CoyoteTimer
