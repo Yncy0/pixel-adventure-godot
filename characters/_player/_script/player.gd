@@ -44,7 +44,7 @@ func jump():
 		else:
 			if !jump_buffered:
 				jump_buffered = true
-				buffer_timer.start()
+				buffer_timer.start(JUMP_BUFFER_TIME)
 
 func wall_jump():
 	if is_on_wall_only():
